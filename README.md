@@ -45,7 +45,7 @@ Four things that go past a single demo script:
    below, it flagged 152 playbooks and blocked 15 outright before they could
    ship. The Regulator audits a structured `incentive_type` field the
    Negotiator sets ("none" / "cashback" / "emi"), not the human-readable
-   label string — an earlier version matched on substrings like
+   label string an earlier version matched on substrings like
    `"cashback" in label`, which meant an EMI offer on a risk-flagged card
    slipped past the block it should have hit. That's fixed now; see
    `tests/test_agents.py::test_regulator_is_keyed_off_structured_field_not_label_text`
@@ -58,7 +58,7 @@ Four things that go past a single demo script:
    unconstrained working the highest expected-value cases first is
    roughly double the revenue per attempt of working all of them. (This
    is a ranked-vs-unranked comparison, not a comparison against a
-   first-come-first-served queue — `simulate.py` doesn't model arrival
+   first-come-first-served queue `simulate.py` doesn't model arrival
    order at all.)
 3. **A message the customer would actually receive.** The Negotiator doesn't
    stop at "channel: WhatsApp." It drafts the send-ready copy by default
@@ -102,7 +102,7 @@ single generic retry does. The table shows what follows *if* that
 assumption holds, not proof that it holds. What is real: the trained
 `LogisticRegression`, the Regulator's rule checks, the budget-ranking logic,
 and the bandit's convergence are all genuinely computed, not scripted to hit
-a target number — only the two realization-fraction constants above are
+a target number only the two realization-fraction constants above are
 authored assumptions rather than fitted or measured values. See
 `src/revive/simulate.py` for exactly where those constants live.
 
@@ -174,7 +174,7 @@ the rest of the pipeline does not need to change to support that.
 (diagnosis class, segment, amount, tenure, retry count) that are the same
 inputs that formula is built from. So the model recovering that pattern is
 evidence it can learn a known synthetic function from noisy binary draws of
-itself — a real but narrow ML exercise not evidence it would generalize
+itself a real but narrow ML exercise not evidence it would generalize
 to whatever actually drives recoverability for real customers, which this
 project has no data on. The "genuine prediction, not a lookup table" line
 in `orchestrator.py`'s docstring is true in a narrow sense (the model isn't
@@ -193,6 +193,6 @@ first roadmap item below for exactly this reason.
 
 
 AUTHOR                                                                                                                                                                      
-JYOTI KUMARI
-INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN
+JYOTI KUMARI                                                                                                                                                               
+(INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN)                                                                                                                
 02601192025
