@@ -55,7 +55,7 @@ Four things that go past a single demo script:
    probability x confidence) and only works the top slice that fits a
    35% ops-capacity budget. That worklist recovers ~₹3,219 per attempt,
    versus ~₹1,603 per attempt if every eligible case were worked
-   unconstrained — working the highest expected-value cases first is
+   unconstrained working the highest expected-value cases first is
    roughly double the revenue per attempt of working all of them. (This
    is a ranked-vs-unranked comparison, not a comparison against a
    first-come-first-served queue — `simulate.py` doesn't model arrival
@@ -85,7 +85,7 @@ Four things that go past a single demo script:
 
 Every number in this table is read directly from `results.json`'s output
 (`baseline.revenue_per_attempt`, `revive_budgeted.revenue_per_attempt` and
-`.revenue_per_attempt_unconstrained` — all three fields are computed in
+`.revenue_per_attempt_unconstrained` all three fields are computed in
 `simulate.py`, not derived by hand), so re-running `python -m
 src.revive.simulate` reproduces this table exactly. The "ReVive,
 unconstrained" revenue-per-attempt figure is `revive_recovered_amount`
@@ -94,7 +94,7 @@ case actually worked, not per case in the full 500-transaction batch.
 
 **Read this table as an illustration of a mechanism, not a measured result.**
 The gap between baseline and ReVive isn't something the simulation
-discovered — `simulate.py` hard-codes baseline to realize ~40% of a
+discovered `simulate.py` hard-codes baseline to realize ~40% of a
 synthetic "true recoverability" signal and ReVive to realize 55-90% of it
 (scaled by the swarm's own confidence), on the stated assumption that a
 tailored playbook lands closer to a customer's actual recoverability than a
@@ -174,7 +174,7 @@ the rest of the pipeline does not need to change to support that.
 (diagnosis class, segment, amount, tenure, retry count) that are the same
 inputs that formula is built from. So the model recovering that pattern is
 evidence it can learn a known synthetic function from noisy binary draws of
-itself — a real but narrow ML exercise — not evidence it would generalize
+itself — a real but narrow ML exercise not evidence it would generalize
 to whatever actually drives recoverability for real customers, which this
 project has no data on. The "genuine prediction, not a lookup table" line
 in `orchestrator.py`'s docstring is true in a narrow sense (the model isn't
@@ -192,7 +192,7 @@ first roadmap item below for exactly this reason.
   channel, timing, and incentive together
 
 
-AUTHOR 
+AUTHOR                                                                                                                                                                      
 JYOTI KUMARI
 INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN
 02601192025
