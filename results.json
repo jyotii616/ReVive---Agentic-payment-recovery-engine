@@ -1,0 +1,328 @@
+{
+  "n_failed_transactions": 500,
+  "total_failed_amount": 1501577.39,
+  "baseline": {
+    "recovered_amount": 333558.29,
+    "recovered_count": 107,
+    "recovery_rate": 0.214,
+    "revenue_per_attempt": 667.12
+  },
+  "revive": {
+    "recovered_amount": 729549.09,
+    "recovered_count": 241,
+    "recovery_rate": 0.482
+  },
+  "revive_budgeted": {
+    "ops_capacity_fraction": 0.35,
+    "worklist_size": 175,
+    "recovered_amount": 563337.21,
+    "recovered_count": 111,
+    "revenue_per_attempt": 3219.07,
+    "revenue_per_attempt_unconstrained": 1603.4
+  },
+  "compliance": {
+    "CLEAR": 333,
+    "FLAG": 152,
+    "BLOCK": 15
+  },
+  "diagnosis_breakdown": {
+    "TRANSIENT": 201,
+    "STRUCTURAL": 173,
+    "FRICTION": 126
+  },
+  "uplift": {
+    "additional_amount_recovered": 395990.8,
+    "relative_recovery_rate_uplift_pct": 125.2,
+    "additional_amount_recovered_on_35pct_budget": 446591.81
+  },
+  "sample_playbooks": [
+    {
+      "amount": 30838.26,
+      "failure_reason": "BANK_SERVER_TIMEOUT",
+      "customer_segment": "loyal",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_164f0ac1a7",
+      "expected_recovery_probability": 0.861,
+      "swarm_confidence": 0.817,
+      "diagnosis": "TRANSIENT",
+      "timing": "next morning, 09:00-10:30 IST",
+      "channel": "WhatsApp (personal) + EMI-conversion offer",
+      "drafted_message": "Hi there, your payment of \u20b930,838 didn't go through. You can now split it into easy monthly instalments, no extra charges for the first conversion. Tap to complete: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] BANK_SERVER_TIMEOUT is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.80] Late-night failure, same-day retry has near-zero response; mornings show highest UPI completion rates.",
+        "[Negotiator, conf=0.75] High-value loyal customer at \u20b930,838, an EMI option removes the real objection instead of just retrying the same failed flow.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 86.1% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 21674.95
+    },
+    {
+      "amount": 18614.33,
+      "failure_reason": "OTP_EXPIRED",
+      "customer_segment": "loyal",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_5ce28a2b56",
+      "expected_recovery_probability": 0.908,
+      "swarm_confidence": 0.783,
+      "diagnosis": "FRICTION",
+      "timing": "within 15 minutes",
+      "channel": "WhatsApp (personal) + EMI-conversion offer",
+      "drafted_message": "Hi there, your payment of \u20b918,614 didn't go through. You can now split it into easy monthly instalments, no extra charges for the first conversion. Tap to complete: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.75] OTP_EXPIRED indicates the customer *intended* to pay but the flow broke mid-way, recoverable with an easier retry path.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.75] High-value loyal customer at \u20b918,614, an EMI option removes the real objection instead of just retrying the same failed flow.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 90.8% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 13242.8
+    },
+    {
+      "amount": 16693.54,
+      "failure_reason": "BANK_SERVER_TIMEOUT",
+      "customer_segment": "returning",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_0e4c159c3b",
+      "expected_recovery_probability": 0.788,
+      "swarm_confidence": 0.8,
+      "diagnosis": "TRANSIENT",
+      "timing": "next morning, 09:00-10:30 IST",
+      "channel": "WhatsApp, no incentive",
+      "drafted_message": "Hi there, that last payment attempt dropped on our end, not yours. Retry here: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] BANK_SERVER_TIMEOUT is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.80] Late-night failure, same-day retry has near-zero response; mornings show highest UPI completion rates.",
+        "[Negotiator, conf=0.70] Returning customer, moderate ticket. A high-open-rate channel is enough here without eroding margin.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 78.8% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 10520.7
+    },
+    {
+      "amount": 15256.15,
+      "failure_reason": "NETWORK_DROP",
+      "customer_segment": "returning",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_9273296056",
+      "expected_recovery_probability": 0.832,
+      "swarm_confidence": 0.817,
+      "diagnosis": "TRANSIENT",
+      "timing": "within 15 minutes",
+      "channel": "WhatsApp, no incentive",
+      "drafted_message": "Hi there, that last payment attempt dropped on our end, not yours. Retry here: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] NETWORK_DROP is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.70] Returning customer, moderate ticket. A high-open-rate channel is enough here without eroding margin.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 83.2% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 10361.61
+    },
+    {
+      "amount": 15063.09,
+      "failure_reason": "OTP_EXPIRED",
+      "customer_segment": "returning",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_6d893392a7",
+      "expected_recovery_probability": 0.884,
+      "swarm_confidence": 0.767,
+      "diagnosis": "FRICTION",
+      "timing": "within 15 minutes",
+      "channel": "WhatsApp, no incentive",
+      "drafted_message": "Hi there, your OTP window closed before the payment finished. One more try: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.75] OTP_EXPIRED indicates the customer *intended* to pay but the flow broke mid-way, recoverable with an easier retry path.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.70] Returning customer, moderate ticket. A high-open-rate channel is enough here without eroding margin.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 88.4% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 10213.15
+    },
+    {
+      "amount": 15291.44,
+      "failure_reason": "UPI_PIN_MISMATCH",
+      "customer_segment": "returning",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_5e6b1aee99",
+      "expected_recovery_probability": 0.862,
+      "swarm_confidence": 0.767,
+      "diagnosis": "FRICTION",
+      "timing": "within 15 minutes",
+      "channel": "WhatsApp, no incentive",
+      "drafted_message": "Hi there, your OTP window closed before the payment finished. One more try: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.75] UPI_PIN_MISMATCH indicates the customer *intended* to pay but the flow broke mid-way, recoverable with an easier retry path.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.70] Returning customer, moderate ticket. A high-open-rate channel is enough here without eroding margin.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 86.2% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 10111.37
+    },
+    {
+      "amount": 14403.51,
+      "failure_reason": "ISSUER_DOWN",
+      "customer_segment": "new",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_7d105e3da6",
+      "expected_recovery_probability": 0.827,
+      "swarm_confidence": 0.8,
+      "diagnosis": "TRANSIENT",
+      "timing": "within 15 minutes",
+      "channel": "In-app nudge + small cashback (2%)",
+      "drafted_message": "Hi there, looks like your \u20b914,404 payment got stuck. Finish it in the next hour and we'll add a small thank-you credit to your account. {recovery_link}",
+      "compliance_status": "FLAG",
+      "compliance_notes": "First-time customer being offered an incentive before their identity/KYC has fully matured; hold for manual review per goodwill-offer policy.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] ISSUER_DOWN is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.65] First-time customer, a small goodwill cashback offsets the friction of a bad first impression and protects lifetime value.",
+        "[Regulator, conf=0.90] FLAG: First-time customer being offered an incentive before their identity/KYC has fully matured; hold for manual review per goodwill-offer policy.",
+        "[Judge] Model estimates 82.7% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 9528.54
+    },
+    {
+      "amount": 15575.68,
+      "failure_reason": "ISSUER_DOWN",
+      "customer_segment": "returning",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_b7bd5a214f",
+      "expected_recovery_probability": 0.748,
+      "swarm_confidence": 0.8,
+      "diagnosis": "TRANSIENT",
+      "timing": "next morning, 09:00-10:30 IST",
+      "channel": "WhatsApp, no incentive",
+      "drafted_message": "Hi there, that last payment attempt dropped on our end, not yours. Retry here: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] ISSUER_DOWN is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.80] Late-night failure, same-day retry has near-zero response; mornings show highest UPI completion rates.",
+        "[Negotiator, conf=0.70] Returning customer, moderate ticket. A high-open-rate channel is enough here without eroding margin.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 74.8% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 9318.71
+    },
+    {
+      "amount": 13038.3,
+      "failure_reason": "OTP_EXPIRED",
+      "customer_segment": "high_value",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_804403f5ce",
+      "expected_recovery_probability": 0.871,
+      "swarm_confidence": 0.783,
+      "diagnosis": "FRICTION",
+      "timing": "within 15 minutes",
+      "channel": "WhatsApp (personal) + EMI-conversion offer",
+      "drafted_message": "Hi there, your payment of \u20b913,038 didn't go through. You can now split it into easy monthly instalments, no extra charges for the first conversion. Tap to complete: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.75] OTP_EXPIRED indicates the customer *intended* to pay but the flow broke mid-way, recoverable with an easier retry path.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.75] High-value high_value customer at \u20b913,038, an EMI option removes the real objection instead of just retrying the same failed flow.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 87.1% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 8892.82
+    },
+    {
+      "amount": 13266.65,
+      "failure_reason": "NETWORK_DROP",
+      "customer_segment": "new",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_1d39714fa7",
+      "expected_recovery_probability": 0.78,
+      "swarm_confidence": 0.8,
+      "diagnosis": "TRANSIENT",
+      "timing": "within 15 minutes",
+      "channel": "In-app nudge + small cashback (2%)",
+      "drafted_message": "Hi there, looks like your \u20b913,267 payment got stuck. Finish it in the next hour and we'll add a small thank-you credit to your account. {recovery_link}",
+      "compliance_status": "FLAG",
+      "compliance_notes": "First-time customer being offered an incentive before their identity/KYC has fully matured; hold for manual review per goodwill-offer policy.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] NETWORK_DROP is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.65] First-time customer, a small goodwill cashback offsets the friction of a bad first impression and protects lifetime value.",
+        "[Regulator, conf=0.90] FLAG: First-time customer being offered an incentive before their identity/KYC has fully matured; hold for manual review per goodwill-offer policy.",
+        "[Judge] Model estimates 78.0% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 8273.75
+    },
+    {
+      "amount": 19748.93,
+      "failure_reason": "NETWORK_DROP",
+      "customer_segment": "new",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_362e84900f",
+      "expected_recovery_probability": 0.597,
+      "swarm_confidence": 0.7,
+      "diagnosis": "TRANSIENT",
+      "timing": "delay 48h, single consolidated nudge",
+      "channel": "In-app nudge + small cashback (2%)",
+      "drafted_message": "Hi there, looks like your \u20b919,749 payment got stuck. Finish it in the next hour and we'll add a small thank-you credit to your account. {recovery_link}",
+      "compliance_status": "FLAG",
+      "compliance_notes": "retry_count=3 exceeds the 3-contact soft cap; further unsolicited nudges risk a DND/TRAI complaint. First-time customer being offered an incentive before their identity/KYC has fully matured; hold for manual review per goodwill-offer policy.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] NETWORK_DROP is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.55] Customer has already failed 3 times, immediate re-approach reads as spam and suppresses response; back off.",
+        "[Negotiator, conf=0.65] First-time customer, a small goodwill cashback offsets the friction of a bad first impression and protects lifetime value.",
+        "[Regulator, conf=0.90] FLAG: retry_count=3 exceeds the 3-contact soft cap; further unsolicited nudges risk a DND/TRAI complaint. First-time customer being offered an incentive before their identity/KYC has fully matured; hold for manual review per goodwill-offer policy.",
+        "[Judge] Model estimates 59.7% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 8259.95
+    },
+    {
+      "amount": 9793.26,
+      "failure_reason": "NETWORK_DROP",
+      "customer_segment": "high_value",
+      "in_budgeted_worklist": true,
+      "txn_id": "txn_fdc53b12b6",
+      "expected_recovery_probability": 0.911,
+      "swarm_confidence": 0.833,
+      "diagnosis": "TRANSIENT",
+      "timing": "within 15 minutes",
+      "channel": "WhatsApp (personal) + EMI-conversion offer",
+      "drafted_message": "Hi there, your payment of \u20b99,793 didn't go through. You can now split it into easy monthly instalments, no extra charges for the first conversion. Tap to complete: {recovery_link}",
+      "compliance_status": "CLEAR",
+      "compliance_notes": "No consent, contact-frequency, or risk-hold conflicts found.",
+      "reasoning_chain": [
+        "[Coroner, conf=0.90] NETWORK_DROP is an infrastructure-side fault, not a customer decision, the payment almost certainly would have gone through.",
+        "[Psychologist, conf=0.85] Fresh, daytime, low-retry failure, intent is still 'hot'; immediate retry captures it before attention drifts.",
+        "[Negotiator, conf=0.75] High-value high_value customer at \u20b99,793, an EMI option removes the real objection instead of just retrying the same failed flow.",
+        "[Regulator, conf=0.95] CLEAR: No consent, contact-frequency, or risk-hold conflicts found.",
+        "[Judge] Model estimates 91.1% recovery probability. PURSUE (threshold=25%)."
+      ],
+      "worth_pursuing": true,
+      "expected_value": 7437.99
+    }
+  ]
+}

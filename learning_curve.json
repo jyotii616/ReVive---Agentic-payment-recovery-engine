@@ -1,0 +1,167 @@
+{
+  "n_days": 10,
+  "txns_per_day": 150,
+  "final_learned_best_arm": "emi_conversion",
+  "daily_results": [
+    {
+      "day": 1,
+      "recovered_amount": 234436.67,
+      "incentive_cost": 710.0,
+      "net_recovered": 233726.67,
+      "arm_distribution": {
+        "no_incentive": 38,
+        "small_cashback": 15,
+        "emi_conversion": 97
+      },
+      "learned_values": {
+        "no_incentive": 1283.9,
+        "small_cashback": 1296.1,
+        "emi_conversion": 1706.1
+      }
+    },
+    {
+      "day": 2,
+      "recovered_amount": 257411.71,
+      "incentive_cost": 745.0,
+      "net_recovered": 256666.71,
+      "arm_distribution": {
+        "no_incentive": 13,
+        "small_cashback": 6,
+        "emi_conversion": 131
+      },
+      "learned_values": {
+        "no_incentive": 1356.8,
+        "small_cashback": 1425.1,
+        "emi_conversion": 1716.1
+      }
+    },
+    {
+      "day": 3,
+      "recovered_amount": 297052.71,
+      "incentive_cost": 805.0,
+      "net_recovered": 296247.71,
+      "arm_distribution": {
+        "no_incentive": 3,
+        "small_cashback": 7,
+        "emi_conversion": 140
+      },
+      "learned_values": {
+        "no_incentive": 1369.6,
+        "small_cashback": 1368.1,
+        "emi_conversion": 1832.5
+      }
+    },
+    {
+      "day": 4,
+      "recovered_amount": 266411.49,
+      "incentive_cost": 770.0,
+      "net_recovered": 265641.49,
+      "arm_distribution": {
+        "no_incentive": 4,
+        "small_cashback": 4,
+        "emi_conversion": 142
+      },
+      "learned_values": {
+        "no_incentive": 1336.7,
+        "small_cashback": 1297.2,
+        "emi_conversion": 1829.9
+      }
+    },
+    {
+      "day": 5,
+      "recovered_amount": 305188.49,
+      "incentive_cost": 780.0,
+      "net_recovered": 304408.49,
+      "arm_distribution": {
+        "no_incentive": 10,
+        "small_cashback": 8,
+        "emi_conversion": 132
+      },
+      "learned_values": {
+        "no_incentive": 1354.8,
+        "small_cashback": 1163.7,
+        "emi_conversion": 1897.2
+      }
+    },
+    {
+      "day": 6,
+      "recovered_amount": 279693.37,
+      "incentive_cost": 785.0,
+      "net_recovered": 278908.37,
+      "arm_distribution": {
+        "no_incentive": 3,
+        "small_cashback": 5,
+        "emi_conversion": 142
+      },
+      "learned_values": {
+        "no_incentive": 1370.2,
+        "small_cashback": 1246.8,
+        "emi_conversion": 1890.6
+      }
+    },
+    {
+      "day": 7,
+      "recovered_amount": 316622.59,
+      "incentive_cost": 760.0,
+      "net_recovered": 315862.59,
+      "arm_distribution": {
+        "no_incentive": 8,
+        "small_cashback": 5,
+        "emi_conversion": 137
+      },
+      "learned_values": {
+        "no_incentive": 1318.8,
+        "small_cashback": 1438.7,
+        "emi_conversion": 1927.6
+      }
+    },
+    {
+      "day": 8,
+      "recovered_amount": 329880.71,
+      "incentive_cost": 800.0,
+      "net_recovered": 329080.71,
+      "arm_distribution": {
+        "no_incentive": 6,
+        "small_cashback": 8,
+        "emi_conversion": 136
+      },
+      "learned_values": {
+        "no_incentive": 1265.8,
+        "small_cashback": 1463.2,
+        "emi_conversion": 1975.5
+      }
+    },
+    {
+      "day": 9,
+      "recovered_amount": 280617.7,
+      "incentive_cost": 840.0,
+      "net_recovered": 279777.7,
+      "arm_distribution": {
+        "no_incentive": 4,
+        "small_cashback": 11,
+        "emi_conversion": 135
+      },
+      "learned_values": {
+        "no_incentive": 1261.6,
+        "small_cashback": 1374.7,
+        "emi_conversion": 1974.2
+      }
+    },
+    {
+      "day": 10,
+      "recovered_amount": 417067.68,
+      "incentive_cost": 790.0,
+      "net_recovered": 416277.68,
+      "arm_distribution": {
+        "no_incentive": 6,
+        "small_cashback": 7,
+        "emi_conversion": 137
+      },
+      "learned_values": {
+        "no_incentive": 1308.3,
+        "small_cashback": 1325.4,
+        "emi_conversion": 2070.4
+      }
+    }
+  ]
+}
