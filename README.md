@@ -190,3 +190,9 @@ first roadmap item below for exactly this reason.
   just one-off retries
 - Move the bandit from a single incentive decision to jointly optimizing
   channel, timing, and incentive together
+
+
+AUTHOR 
+JYOTI KUMARI
+INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN
+02601192025
